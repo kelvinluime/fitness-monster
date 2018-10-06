@@ -10,6 +10,14 @@ import UIKit
 import GoogleSignIn
 
 class LoginSceneViewController: UIViewController, GIDSignInUIDelegate {
+    let loginBypass: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(switchView), for: UIControl.Event.touchUpInside)
+        button.setImage(UIImage(imageLiteralResourceName: "padlock"), for: UIControl.State.normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     let logoView: UIImageView = {
         let imView = UIImageView()
         imView.image = UIImage(imageLiteralResourceName: "monster")
@@ -40,6 +48,11 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate {
 
     @objc func handleLogin() {
         GIDSignIn.sharedInstance().signIn()
+    }
+
+    @objc func switchView() {
+        let mainView = GameSceneViewController()
+        self.present(mainView, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -75,5 +88,11 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate {
         logoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.30).isActive = true
         logoButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         logoButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+
+        viewContainer.addSubview(loginBypass)
+        loginBypass.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        loginBypass.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.40 * -1).isActive = true
+        loginBypass.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        loginBypass.widthAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }
