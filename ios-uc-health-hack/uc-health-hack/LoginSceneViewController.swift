@@ -10,6 +10,13 @@ import UIKit
 import GoogleSignIn
 
 class LoginSceneViewController: UIViewController, GIDSignInUIDelegate {
+    let logoView: UIImageView = {
+        let imView = UIImageView()
+        imView.image = UIImage(imageLiteralResourceName: "monster")
+        imView.translatesAutoresizingMaskIntoConstraints = false
+        return imView
+    }()
+
     let loginButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(handleLogin), for: UIControl.Event.touchUpInside)
@@ -42,22 +49,28 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate {
     }
 
     func setupLayout() {
-        let topViewContainer = UIView()
-        topViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        let viewContainer = UIView()
+        viewContainer.translatesAutoresizingMaskIntoConstraints = false
 
-        view.addSubview(topViewContainer)
-        topViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        topViewContainer.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        topViewContainer.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        topViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        view.addSubview(viewContainer)
+        viewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        viewContainer.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        viewContainer.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        viewContainer.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
 
-        topViewContainer.addSubview(loginButton)
+        viewContainer.addSubview(logoView)
+        logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.10 * -1).isActive = true
+        logoView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        logoView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+
+        viewContainer.addSubview(loginButton)
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: view.frame.width*0.08 * -1).isActive = true
         loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.30).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         loginButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
 
-        topViewContainer.addSubview(logoButton)
+        viewContainer.addSubview(logoButton)
         logoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: view.frame.width*0.08).isActive = true
         logoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.30).isActive = true
         logoButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
