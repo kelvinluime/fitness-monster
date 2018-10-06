@@ -16,6 +16,7 @@
 		BF8E015721692C7100BA01D6 /* uc_health_hackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E015621692C7100BA01D6 /* uc_health_hackTests.swift */; };
 		BF8E016221692C7100BA01D6 /* uc_health_hackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E016121692C7100BA01D6 /* uc_health_hackUITests.swift */; };
 		BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */; };
+		BF8E017421694E6D00BA01D6 /* MissionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		BF8E016121692C7100BA01D6 /* uc_health_hackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uc_health_hackUITests.swift; sourceTree = "<group>"; };
 		BF8E016321692C7100BA01D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
+		BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */,
 				BF8E014D21692C7100BA01D6 /* Info.plist */,
 				BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */,
+				BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */,
 			);
 			path = "uc-health-hack";
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8E017421694E6D00BA01D6 /* MissionCollectionViewCell.swift in Sources */,
 				BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */,
 				BF8E014221692C6400BA01D6 /* AppDelegate.swift in Sources */,
 			);
