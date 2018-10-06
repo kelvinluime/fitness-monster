@@ -6,6 +6,8 @@ target 'uc-health-hack' do
   use_frameworks!
 
   # Pods for uc-health-hack
+  pod 'Alamofire'
+  pod 'FirebaseAuth'
 
   target 'uc-health-hackTests' do
     inherit! :search_paths
