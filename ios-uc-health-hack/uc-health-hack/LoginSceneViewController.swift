@@ -7,9 +7,35 @@
 //
 
 import UIKit
+import Firebase
 import GoogleSignIn
 
-class LoginSceneViewController: UIViewController, GIDSignInUIDelegate {
+class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(
+                withIDToken: authentication.idToken,
+                accessToken: authentication.accessToken)
+        Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
+            if error == nil {
+                print("Signed In")
+                self.switchView()
+            } else {
+                print("Error with Firebase signIn")
+            }
+        }
+    }
+
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+    }
+
+
     let loginBypass: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(switchView), for: UIControl.Event.touchUpInside)
@@ -57,6 +83,7 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         view.backgroundColor = .white
         setupLayout()
     }
