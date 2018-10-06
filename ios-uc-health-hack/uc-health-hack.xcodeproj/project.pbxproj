@@ -11,12 +11,11 @@
 		5C3F3F698E8E74068C6FF60D /* Pods_uc_health_hackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3922801EC631E2EBBD8BBABC /* Pods_uc_health_hackTests.framework */; };
 		6469B931909AAA1B3FCFCCBE /* Pods_uc_health_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3CA0C168BCC8BE6A94E4B /* Pods_uc_health_hack.framework */; };
 		BF8E014221692C6400BA01D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E014121692C6400BA01D6 /* AppDelegate.swift */; };
-		BF8E014421692C6400BA01D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E014321692C6400BA01D6 /* ViewController.swift */; };
-		BF8E014721692C6400BA01D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF8E014521692C6400BA01D6 /* Main.storyboard */; };
 		BF8E014921692C7100BA01D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8E014821692C7100BA01D6 /* Assets.xcassets */; };
 		BF8E014C21692C7100BA01D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */; };
 		BF8E015721692C7100BA01D6 /* uc_health_hackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E015621692C7100BA01D6 /* uc_health_hackTests.swift */; };
 		BF8E016221692C7100BA01D6 /* uc_health_hackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E016121692C7100BA01D6 /* uc_health_hackUITests.swift */; };
+		BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +47,6 @@
 		AB7E78E3C6BA88F18B7FD662 /* Pods-uc-health-hackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackUITests.debug.xcconfig"; path = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF8E013E21692C6400BA01D6 /* uc-health-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uc-health-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8E014121692C6400BA01D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF8E014321692C6400BA01D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BF8E014621692C6400BA01D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF8E014821692C7100BA01D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF8E014B21692C7100BA01D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF8E014D21692C7100BA01D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +56,7 @@
 		BF8E015D21692C7100BA01D6 /* uc-health-hackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uc-health-hackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8E016121692C7100BA01D6 /* uc_health_hackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uc_health_hackUITests.swift; sourceTree = "<group>"; };
 		BF8E016321692C7100BA01D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 				AB7E78E3C6BA88F18B7FD662 /* Pods-uc-health-hackUITests.debug.xcconfig */,
 				02364D1B0FAF8C4FD4B4077E /* Pods-uc-health-hackUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -139,11 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				BF8E014121692C6400BA01D6 /* AppDelegate.swift */,
-				BF8E014321692C6400BA01D6 /* ViewController.swift */,
-				BF8E014521692C6400BA01D6 /* Main.storyboard */,
 				BF8E014821692C7100BA01D6 /* Assets.xcassets */,
 				BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */,
 				BF8E014D21692C7100BA01D6 /* Info.plist */,
+				BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */,
 			);
 			path = "uc-health-hack";
 			sourceTree = "<group>";
@@ -275,7 +271,6 @@
 			files = (
 				BF8E014C21692C7100BA01D6 /* LaunchScreen.storyboard in Resources */,
 				BF8E014921692C7100BA01D6 /* Assets.xcassets in Resources */,
-				BF8E014721692C6400BA01D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF8E014421692C6400BA01D6 /* ViewController.swift in Sources */,
+				BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */,
 				BF8E014221692C6400BA01D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,14 +401,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BF8E014521692C6400BA01D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF8E014621692C6400BA01D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
