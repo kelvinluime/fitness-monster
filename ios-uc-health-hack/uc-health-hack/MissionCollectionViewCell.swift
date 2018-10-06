@@ -21,7 +21,7 @@ class MissionCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.attributedText = NSAttributedString(string: "fruits", attributes: [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14),
-            NSAttributedString.Key.foregroundColor : UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1)
+            NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
             ])
         label.textAlignment = .center
         return label

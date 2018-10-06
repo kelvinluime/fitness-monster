@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
+    <!-- required for health kit -->
+    <key>NSHealthShareUsageDescription</key>
+    <string>Our app needs to access to your health data to see if you have completed the missions!</string>
 </dict>
 </plist>

@@ -10,14 +10,23 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        let gameSceneViewController = GameSceneViewController()
+        gameSceneViewController.tabBarItem = UITabBarItem(title: "Game", image: nil , tag: 0)
+
+        let vc2 = UIViewController()
+        vc2.tabBarItem = UITabBarItem(title: "", image: nil, tag: 1)
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [gameSceneViewController]
+        tabBarController.tabBar.isTranslucent = false
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = GameSceneViewController()
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
 
         return true
