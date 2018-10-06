@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3D941D2169437800BD1B0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C3D941C2169437800BD1B0A /* GoogleService-Info.plist */; };
 		4F44A6E902C3822A2BED0F2D /* Pods_uc_health_hackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7278D4F559B3283F9C267CE9 /* Pods_uc_health_hackUITests.framework */; };
 		5C3F3F698E8E74068C6FF60D /* Pods_uc_health_hackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3922801EC631E2EBBD8BBABC /* Pods_uc_health_hackTests.framework */; };
 		6469B931909AAA1B3FCFCCBE /* Pods_uc_health_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3CA0C168BCC8BE6A94E4B /* Pods_uc_health_hack.framework */; };
@@ -43,6 +44,7 @@
 		14471FEED1DA042B79DBC6CC /* Pods-uc-health-hack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hack.release.xcconfig"; path = "Target Support Files/Pods-uc-health-hack/Pods-uc-health-hack.release.xcconfig"; sourceTree = "<group>"; };
 		3922801EC631E2EBBD8BBABC /* Pods_uc_health_hackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uc_health_hackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1C676031AFA8C3B4CBDC41 /* Pods-uc-health-hackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackTests.release.xcconfig"; path = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C3D941C2169437800BD1B0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57081B2AD872E0C6ED55CBF2 /* Pods-uc-health-hackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackTests.debug.xcconfig"; path = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7278D4F559B3283F9C267CE9 /* Pods_uc_health_hackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uc_health_hackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7E78E3C6BA88F18B7FD662 /* Pods-uc-health-hackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackUITests.debug.xcconfig"; path = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				BF8E014821692C7100BA01D6 /* Assets.xcassets */,
 				BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */,
 				BF8E014D21692C7100BA01D6 /* Info.plist */,
+				4C3D941C2169437800BD1B0A /* GoogleService-Info.plist */,
 				BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */,
 				BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */,
 			);
@@ -276,6 +279,7 @@
 			files = (
 				BF8E014C21692C7100BA01D6 /* LaunchScreen.storyboard in Resources */,
 				BF8E014921692C7100BA01D6 /* Assets.xcassets in Resources */,
+				4C3D941D2169437800BD1B0A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
