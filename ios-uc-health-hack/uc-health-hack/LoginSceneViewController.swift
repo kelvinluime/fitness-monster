@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import GoogleSignIn
 
 class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
@@ -24,6 +25,8 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
             if error == nil {
                 print("Signed In")
+                self.initFirestore()
+                self.initUser()
                 self.switchView()
             } else {
                 print("Error with Firebase signIn")
@@ -79,6 +82,29 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
     @objc func switchView() {
         let mainView = GameSceneViewController()
         self.present(mainView, animated: true, completion: nil)
+    }
+
+    func initFirestore() {
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+    }
+
+    func initUser() {
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let ref = Firestore.firestore().collection("Player").document(user.uid)
+            ref.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    return
+                } else {
+                    ref.setData([
+                        "task": []
+                    ])
+                }
+            }
+        }
     }
 
     override func viewDidLoad() {
