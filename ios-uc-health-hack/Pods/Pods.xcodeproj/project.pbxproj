@@ -1,0 +1,775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3721688CAD02E5FB9944A36EC0E8F15A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		60F7D2F2480464CB973F4CE6CFF2FC55 /* Pods-uc-health-hackTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA64C1BFADD20BE940E07D98DB8E43E /* Pods-uc-health-hackTests-dummy.m */; };
+		61E08F285CA043854E2DDD20616A049D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		9DCD744363278E2052E53D202C6EBBE5 /* Pods-uc-health-hack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3776B6A5225F318F08F418557DFFAB0 /* Pods-uc-health-hack-dummy.m */; };
+		BDD660AC5297E339D72C9D31C691EFA0 /* Pods-uc-health-hackUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA735B3D2A608F9F21A77EB3A5EB3BE /* Pods-uc-health-hackUITests-dummy.m */; };
+		CFBB362359F4CD54978EA8137B35ABB7 /* Pods-uc-health-hackTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF1A7DDEF55B65FF02B07FFDB51B7E30 /* Pods-uc-health-hackTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3760103F120F8E0A25E671FB64F9CAE /* Pods-uc-health-hack-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 940C68BD7009041D0FB04095CD55E73D /* Pods-uc-health-hack-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDAA7B10C40E5CD4185B1D6424BAE673 /* Pods-uc-health-hackUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0807667553C686CFF10FCD61D6360F8 /* Pods-uc-health-hackUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDBCBD9C670C446CA56579D59FEEDFE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1D3710BD546D379AA8F0194FCE00F59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80403A16ABE316D66B2FCFC393B75005;
+			remoteInfo = "Pods-uc-health-hack";
+		};
+		B14743EC6B3A71F2A9588EF1D3A8BC31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80403A16ABE316D66B2FCFC393B75005;
+			remoteInfo = "Pods-uc-health-hack";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2B3E4F99378F7836BCCB2B2A4C4A1184 /* Pods_uc_health_hack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_uc_health_hack.framework; path = "Pods-uc-health-hack.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA64C1BFADD20BE940E07D98DB8E43E /* Pods-uc-health-hackTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-uc-health-hackTests-dummy.m"; sourceTree = "<group>"; };
+		4696AEE0604BBC7BF8D43E06FCE3FE15 /* Pods_uc_health_hackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_uc_health_hackTests.framework; path = "Pods-uc-health-hackTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5C7B94BA3E81266D7A73625BEF1FE8B9 /* Pods-uc-health-hackTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-uc-health-hackTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		62B4CBA3C145117ECD846BB6E0925E44 /* Pods_uc_health_hackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_uc_health_hackUITests.framework; path = "Pods-uc-health-hackUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		767CC830767BE34C5B98FC5E3F69E4CF /* Pods-uc-health-hack.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-uc-health-hack.modulemap"; sourceTree = "<group>"; };
+		7ABCD2534159DE7480D61639804565DD /* Pods-uc-health-hackUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uc-health-hackUITests.release.xcconfig"; sourceTree = "<group>"; };
+		82CF0FEE2B09B9C481CC44F9244CD050 /* Pods-uc-health-hackUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-uc-health-hackUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		845671B0D510A99D54B8A21E206B24CC /* Pods-uc-health-hackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uc-health-hackTests.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		940C68BD7009041D0FB04095CD55E73D /* Pods-uc-health-hack-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-uc-health-hack-umbrella.h"; sourceTree = "<group>"; };
+		9717659072D7D7901EB38BDB34391273 /* Pods-uc-health-hackUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-uc-health-hackUITests-Info.plist"; sourceTree = "<group>"; };
+		99F1A970383D0238A8BB13B1776DA18C /* Pods-uc-health-hack-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-uc-health-hack-acknowledgements.plist"; sourceTree = "<group>"; };
+		A0D8DAF921D90B2E9787496B3717F0FB /* Pods-uc-health-hack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uc-health-hack.release.xcconfig"; sourceTree = "<group>"; };
+		A6A353A3E455CB14EFFFD8B451DD6DA4 /* Pods-uc-health-hackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uc-health-hackUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB8F6299BBE1337B9E14A3C4D54B3C0F /* Pods-uc-health-hack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uc-health-hack.debug.xcconfig"; sourceTree = "<group>"; };
+		B0C32CCE23E2BE8A1807266356E68C90 /* Pods-uc-health-hack-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-uc-health-hack-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B54C21DB205A9B2B3724E4C79D52E424 /* Pods-uc-health-hackTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-uc-health-hackTests-Info.plist"; sourceTree = "<group>"; };
+		BB5B44018368BB2CEBB30F8106DA8D1D /* Pods-uc-health-hackUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-uc-health-hackUITests.modulemap"; sourceTree = "<group>"; };
+		BBA735B3D2A608F9F21A77EB3A5EB3BE /* Pods-uc-health-hackUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-uc-health-hackUITests-dummy.m"; sourceTree = "<group>"; };
+		BF1A7DDEF55B65FF02B07FFDB51B7E30 /* Pods-uc-health-hackTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-uc-health-hackTests-umbrella.h"; sourceTree = "<group>"; };
+		C2CA4325A05CD318EC1C855415842024 /* Pods-uc-health-hackUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-uc-health-hackUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C745A8D12C0AC779478D2214A8C8EC25 /* Pods-uc-health-hack-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-uc-health-hack-Info.plist"; sourceTree = "<group>"; };
+		D9C12557ADD6347D162004F6CE8F3C57 /* Pods-uc-health-hackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-uc-health-hackTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E3776B6A5225F318F08F418557DFFAB0 /* Pods-uc-health-hack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-uc-health-hack-dummy.m"; sourceTree = "<group>"; };
+		E68E97FBF111F1381401D1434258A277 /* Pods-uc-health-hackTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-uc-health-hackTests.modulemap"; sourceTree = "<group>"; };
+		F0807667553C686CFF10FCD61D6360F8 /* Pods-uc-health-hackUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-uc-health-hackUITests-umbrella.h"; sourceTree = "<group>"; };
+		F0BDCA821AA8A6215245C02E4A0C15E8 /* Pods-uc-health-hackTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-uc-health-hackTests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BF0B1601F7652F3F3EBD7C09802C034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDBCBD9C670C446CA56579D59FEEDFE1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B02D1A330C478E1C39DC863D03CF9DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61E08F285CA043854E2DDD20616A049D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCD97BE97DEDDD21AC04B4CF1914BDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3721688CAD02E5FB9944A36EC0E8F15A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D746F3B73512FE5E13DC882F1EBE867 /* Pods-uc-health-hackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB5B44018368BB2CEBB30F8106DA8D1D /* Pods-uc-health-hackUITests.modulemap */,
+				82CF0FEE2B09B9C481CC44F9244CD050 /* Pods-uc-health-hackUITests-acknowledgements.markdown */,
+				C2CA4325A05CD318EC1C855415842024 /* Pods-uc-health-hackUITests-acknowledgements.plist */,
+				BBA735B3D2A608F9F21A77EB3A5EB3BE /* Pods-uc-health-hackUITests-dummy.m */,
+				9717659072D7D7901EB38BDB34391273 /* Pods-uc-health-hackUITests-Info.plist */,
+				F0807667553C686CFF10FCD61D6360F8 /* Pods-uc-health-hackUITests-umbrella.h */,
+				A6A353A3E455CB14EFFFD8B451DD6DA4 /* Pods-uc-health-hackUITests.debug.xcconfig */,
+				7ABCD2534159DE7480D61639804565DD /* Pods-uc-health-hackUITests.release.xcconfig */,
+			);
+			name = "Pods-uc-health-hackUITests";
+			path = "Target Support Files/Pods-uc-health-hackUITests";
+			sourceTree = "<group>";
+		};
+		1BB5272A4E1873BDC253396130F9125C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB33339A010465D7149293896949A147 /* Pods-uc-health-hack */,
+				5F1F78419A392181F223DE96F8DDA568 /* Pods-uc-health-hackTests */,
+				0D746F3B73512FE5E13DC882F1EBE867 /* Pods-uc-health-hackUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5F1F78419A392181F223DE96F8DDA568 /* Pods-uc-health-hackTests */ = {
+			isa = PBXGroup;
+			children = (
+				E68E97FBF111F1381401D1434258A277 /* Pods-uc-health-hackTests.modulemap */,
+				5C7B94BA3E81266D7A73625BEF1FE8B9 /* Pods-uc-health-hackTests-acknowledgements.markdown */,
+				F0BDCA821AA8A6215245C02E4A0C15E8 /* Pods-uc-health-hackTests-acknowledgements.plist */,
+				3CA64C1BFADD20BE940E07D98DB8E43E /* Pods-uc-health-hackTests-dummy.m */,
+				B54C21DB205A9B2B3724E4C79D52E424 /* Pods-uc-health-hackTests-Info.plist */,
+				BF1A7DDEF55B65FF02B07FFDB51B7E30 /* Pods-uc-health-hackTests-umbrella.h */,
+				D9C12557ADD6347D162004F6CE8F3C57 /* Pods-uc-health-hackTests.debug.xcconfig */,
+				845671B0D510A99D54B8A21E206B24CC /* Pods-uc-health-hackTests.release.xcconfig */,
+			);
+			name = "Pods-uc-health-hackTests";
+			path = "Target Support Files/Pods-uc-health-hackTests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				AFB9B8DCE6110C58401E066758FA4376 /* Products */,
+				1BB5272A4E1873BDC253396130F9125C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		AB33339A010465D7149293896949A147 /* Pods-uc-health-hack */ = {
+			isa = PBXGroup;
+			children = (
+				767CC830767BE34C5B98FC5E3F69E4CF /* Pods-uc-health-hack.modulemap */,
+				B0C32CCE23E2BE8A1807266356E68C90 /* Pods-uc-health-hack-acknowledgements.markdown */,
+				99F1A970383D0238A8BB13B1776DA18C /* Pods-uc-health-hack-acknowledgements.plist */,
+				E3776B6A5225F318F08F418557DFFAB0 /* Pods-uc-health-hack-dummy.m */,
+				C745A8D12C0AC779478D2214A8C8EC25 /* Pods-uc-health-hack-Info.plist */,
+				940C68BD7009041D0FB04095CD55E73D /* Pods-uc-health-hack-umbrella.h */,
+				AB8F6299BBE1337B9E14A3C4D54B3C0F /* Pods-uc-health-hack.debug.xcconfig */,
+				A0D8DAF921D90B2E9787496B3717F0FB /* Pods-uc-health-hack.release.xcconfig */,
+			);
+			name = "Pods-uc-health-hack";
+			path = "Target Support Files/Pods-uc-health-hack";
+			sourceTree = "<group>";
+		};
+		AFB9B8DCE6110C58401E066758FA4376 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B3E4F99378F7836BCCB2B2A4C4A1184 /* Pods_uc_health_hack.framework */,
+				4696AEE0604BBC7BF8D43E06FCE3FE15 /* Pods_uc_health_hackTests.framework */,
+				62B4CBA3C145117ECD846BB6E0925E44 /* Pods_uc_health_hackUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		28195DF870BA0C341F088B7FC6285C86 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFBB362359F4CD54978EA8137B35ABB7 /* Pods-uc-health-hackTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BD109A808E744859DB4FDD5D6B101CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3760103F120F8E0A25E671FB64F9CAE /* Pods-uc-health-hack-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B114EDCC8557CBCBABFDD1900038758C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDAA7B10C40E5CD4185B1D6424BAE673 /* Pods-uc-health-hackUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		80403A16ABE316D66B2FCFC393B75005 /* Pods-uc-health-hack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA80E4D55A3C43EE5FDAB1A49C86E219 /* Build configuration list for PBXNativeTarget "Pods-uc-health-hack" */;
+			buildPhases = (
+				2BD109A808E744859DB4FDD5D6B101CF /* Headers */,
+				5580514EE323394A61CDEC4EB1BF3AC6 /* Sources */,
+				BCD97BE97DEDDD21AC04B4CF1914BDEB /* Frameworks */,
+				5C9EA3710FC263FCAB70E7B0F6966129 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-uc-health-hack";
+			productName = "Pods-uc-health-hack";
+			productReference = 2B3E4F99378F7836BCCB2B2A4C4A1184 /* Pods_uc_health_hack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DAFDDA7C30A387FF976A8CE9B6939BFD /* Pods-uc-health-hackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12D3CD517622B69C3A3539F3E985CB4D /* Build configuration list for PBXNativeTarget "Pods-uc-health-hackUITests" */;
+			buildPhases = (
+				B114EDCC8557CBCBABFDD1900038758C /* Headers */,
+				59BD5CC83E34E6AC1A24DD02D4CA7EA4 /* Sources */,
+				5BF0B1601F7652F3F3EBD7C09802C034 /* Frameworks */,
+				2EC059990E5DB5EF88D43524B00F2421 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6188F6ECA3760A17038D7CF9BDD1BE08 /* PBXTargetDependency */,
+			);
+			name = "Pods-uc-health-hackUITests";
+			productName = "Pods-uc-health-hackUITests";
+			productReference = 62B4CBA3C145117ECD846BB6E0925E44 /* Pods_uc_health_hackUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F01530FFE867A70B78BA660764D67DCD /* Pods-uc-health-hackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BECEA027D92FECE5E31C0B586626E0F9 /* Build configuration list for PBXNativeTarget "Pods-uc-health-hackTests" */;
+			buildPhases = (
+				28195DF870BA0C341F088B7FC6285C86 /* Headers */,
+				C8364FB8B100812EED0939A46FF5C44B /* Sources */,
+				B02D1A330C478E1C39DC863D03CF9DDB /* Frameworks */,
+				FA65BFE3DF6C395CC63560AD01BC786F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				287D191ED3F7E4646CA5C62BE1C1DE62 /* PBXTargetDependency */,
+			);
+			name = "Pods-uc-health-hackTests";
+			productName = "Pods-uc-health-hackTests";
+			productReference = 4696AEE0604BBC7BF8D43E06FCE3FE15 /* Pods_uc_health_hackTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AFB9B8DCE6110C58401E066758FA4376 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80403A16ABE316D66B2FCFC393B75005 /* Pods-uc-health-hack */,
+				F01530FFE867A70B78BA660764D67DCD /* Pods-uc-health-hackTests */,
+				DAFDDA7C30A387FF976A8CE9B6939BFD /* Pods-uc-health-hackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EC059990E5DB5EF88D43524B00F2421 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9EA3710FC263FCAB70E7B0F6966129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA65BFE3DF6C395CC63560AD01BC786F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5580514EE323394A61CDEC4EB1BF3AC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DCD744363278E2052E53D202C6EBBE5 /* Pods-uc-health-hack-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59BD5CC83E34E6AC1A24DD02D4CA7EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDD660AC5297E339D72C9D31C691EFA0 /* Pods-uc-health-hackUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8364FB8B100812EED0939A46FF5C44B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60F7D2F2480464CB973F4CE6CFF2FC55 /* Pods-uc-health-hackTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		287D191ED3F7E4646CA5C62BE1C1DE62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-uc-health-hack";
+			target = 80403A16ABE316D66B2FCFC393B75005 /* Pods-uc-health-hack */;
+			targetProxy = A1D3710BD546D379AA8F0194FCE00F59 /* PBXContainerItemProxy */;
+		};
+		6188F6ECA3760A17038D7CF9BDD1BE08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-uc-health-hack";
+			target = 80403A16ABE316D66B2FCFC393B75005 /* Pods-uc-health-hack */;
+			targetProxy = B14743EC6B3A71F2A9588EF1D3A8BC31 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		40B45BB3CF3EE4476259302A7FAAD78F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		4C7AD5884D8C4401089CDC78592528D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 845671B0D510A99D54B8A21E206B24CC /* Pods-uc-health-hackTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		533123AFCCB48A6488DED66529FABDAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6A353A3E455CB14EFFFD8B451DD6DA4 /* Pods-uc-health-hackUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		671B6D3EF7E92D08792EE0A84C447EEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ABCD2534159DE7480D61639804565DD /* Pods-uc-health-hackUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		85ED3013A635C27F8B7FAF51362B108C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		8EA966660D6FF210E3BCEBCFB8B6ED4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D8DAF921D90B2E9787496B3717F0FB /* Pods-uc-health-hack.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-uc-health-hack/Pods-uc-health-hack-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-uc-health-hack/Pods-uc-health-hack.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD1CE9F77EABB6429484962D697AA8E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C12557ADD6347D162004F6CE8F3C57 /* Pods-uc-health-hackTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B1AB086F163E8F6263F0A645C341DAA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB8F6299BBE1337B9E14A3C4D54B3C0F /* Pods-uc-health-hack.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-uc-health-hack/Pods-uc-health-hack-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-uc-health-hack/Pods-uc-health-hack.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12D3CD517622B69C3A3539F3E985CB4D /* Build configuration list for PBXNativeTarget "Pods-uc-health-hackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				533123AFCCB48A6488DED66529FABDAA /* Debug */,
+				671B6D3EF7E92D08792EE0A84C447EEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85ED3013A635C27F8B7FAF51362B108C /* Debug */,
+				40B45BB3CF3EE4476259302A7FAAD78F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BECEA027D92FECE5E31C0B586626E0F9 /* Build configuration list for PBXNativeTarget "Pods-uc-health-hackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1CE9F77EABB6429484962D697AA8E1 /* Debug */,
+				4C7AD5884D8C4401089CDC78592528D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA80E4D55A3C43EE5FDAB1A49C86E219 /* Build configuration list for PBXNativeTarget "Pods-uc-health-hack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1AB086F163E8F6263F0A645C341DAA5 /* Debug */,
+				8EA966660D6FF210E3BCEBCFB8B6ED4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

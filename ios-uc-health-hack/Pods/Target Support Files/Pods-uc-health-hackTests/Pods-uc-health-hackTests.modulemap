@@ -1,0 +1,6 @@
+framework module Pods_uc_health_hackTests {
+  umbrella header "Pods-uc-health-hackTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
