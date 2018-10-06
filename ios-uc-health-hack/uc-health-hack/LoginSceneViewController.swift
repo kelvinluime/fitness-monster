@@ -100,7 +100,7 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
                     return
                 } else {
                     ref.setData([
-                        "task": []
+                        "title": "Fitness Rookie"
                     ])
                 }
             }
