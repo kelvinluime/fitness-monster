@@ -7,7 +7,8 @@ target 'uc-health-hack' do
 
   # Pods for uc-health-hack
   pod 'Alamofire'
-  pod 'FirebaseAuth'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'uc-health-hackTests' do
     inherit! :search_paths

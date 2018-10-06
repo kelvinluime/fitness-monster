@@ -72,7 +72,6 @@ class GameSceneViewController: UIViewController {
         monsterImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         monsterImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
 
-            
-
+        
     }
 }
