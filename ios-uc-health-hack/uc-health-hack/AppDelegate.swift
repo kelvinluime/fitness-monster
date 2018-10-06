@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
 
         let gameSceneViewController = GameSceneViewController()
         gameSceneViewController.tabBarItem = UITabBarItem(title: "Game", image: nil , tag: 0)
@@ -26,10 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.tabBar.isTranslucent = false
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = tabBarController
+        window?.rootViewController = LoginSceneViewController()
         window?.makeKeyAndVisible()
-
         return true
+    }
+
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
