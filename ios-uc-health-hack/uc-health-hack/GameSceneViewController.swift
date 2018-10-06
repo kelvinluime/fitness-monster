@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import HealthKit
+import HealthKitUI
 
 class GameSceneViewController: UIViewController {
     let cellId = "cellId"
+    var healthStore: HKHealthStore?
 
     let profileButton: UIButton = {
         let button = UIButton()
@@ -50,7 +53,7 @@ class GameSceneViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.attributedText = NSAttributedString(string: "missions", attributes: [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20),
-            NSAttributedString.Key.foregroundColor : UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1)
+            NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
             ])
         label.textAlignment = .center
         return label
@@ -63,7 +66,38 @@ class GameSceneViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = .white
 
+        requestHKPermissons()
         setupLayout()
+    }
+
+    func requestHKPermissons() {
+        guard HKHealthStore.isHealthDataAvailable() else { return }
+
+        self.healthStore = HKHealthStore()
+        let readDataTypes = self.dataTypesToRead()
+        self.healthStore?.requestAuthorization(toShare: nil, read: readDataTypes as! Set<HKObjectType>, completion: { (result, error) in
+            if let error =  error {
+                let alert = UIAlertController(title: "Error", message: "There is an error when trying to request authorization on health data: \(error.localizedDescription)", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+    }
+
+    func dataTypesToRead() -> Set<AnyHashable> {
+        let heightType = HKObjectType.quantityType(forIdentifier: .height)
+        let weightType = HKObjectType.quantityType(forIdentifier: .bodyMass)
+        let systolic = HKObjectType.quantityType(forIdentifier: .bloodPressureSystolic)
+        let dystolic = HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)
+        let sleepAnalysis = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)
+        let step = HKObjectType.quantityType(forIdentifier: .stepCount)
+        let walking = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)
+        let cycling = HKObjectType.quantityType(forIdentifier: .distanceCycling)
+        let basalEnergyBurned = HKObjectType.quantityType(forIdentifier: .basalEnergyBurned)
+        let water = HKObjectType.quantityType(forIdentifier: .dietaryWater)
+
+        return Set<AnyHashable>([weightType, step, walking, sleepAnalysis])
     }
 
     func setupLayout() {

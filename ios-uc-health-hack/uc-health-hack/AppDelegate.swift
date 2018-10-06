@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
 
+        let gameSceneViewController = GameSceneViewController()
+        gameSceneViewController.tabBarItem = UITabBarItem(title: "Game", image: nil , tag: 0)
+
+        let vc2 = UIViewController()
+        vc2.tabBarItem = UITabBarItem(title: "", image: nil, tag: 1)
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [gameSceneViewController]
+        tabBarController.tabBar.isTranslucent = false
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = LoginSceneViewController()
         window?.makeKeyAndVisible()
