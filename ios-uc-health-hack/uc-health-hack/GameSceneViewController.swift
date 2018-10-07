@@ -24,6 +24,8 @@ class GameSceneViewController: UIViewController {
     var isMonsterUp: Bool?
     var monsterCenterYAnchor: NSLayoutConstraint?
 
+    var hpBarTrailingAnchor: NSLayoutAnchor?
+
     let profileButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(handleProfile), for: UIControl.Event.touchUpInside)
@@ -274,6 +276,38 @@ class GameSceneViewController: UIViewController {
         }
         self.present(vc, animated: true, completion: nil)
     }
+
+    func handleAttack(missionIndex: Int, cell: MissionCollectionViewCell) {
+        guard let missions = self.missions else { return }
+
+        let effectImageView = UIImageView(image: missions[missionIndex].image)
+        effectImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(effectImageView)
+        let effectImageViewCenterXAnchor = effectImageView.centerXAnchor.constraint(equalTo: cell.missionImageView.centerXAnchor)
+        effectImageViewCenterXAnchor.isActive = true
+        let effectImageViewCenterYAnchor = effectImageView.centerYAnchor.constraint(equalTo: cell.missionImageView.centerYAnchor)
+        effectImageViewCenterYAnchor.isActive = true
+        let effectImageViewWidthAnchor = effectImageView.widthAnchor.constraint(equalToConstant: 24)
+        effectImageViewWidthAnchor.isActive = true
+        let effectImageViewHeightAnchor = effectImageView.heightAnchor.constraint(equalToConstant: 24)
+        effectImageViewHeightAnchor.isActive = true
+        view.layoutIfNeeded()
+
+        UIView.animate(withDuration: 2, delay: 0.5, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+            effectImageViewCenterXAnchor.isActive = false
+            effectImageViewCenterYAnchor.isActive = false
+            effectImageView.centerXAnchor.constraint(equalTo: self.monsterImageView.centerXAnchor).isActive = true
+            effectImageView.centerYAnchor.constraint(equalTo: self.monsterImageView.centerYAnchor).isActive = true
+            effectImageViewHeightAnchor.constant = 125
+            effectImageViewWidthAnchor.constant = 125
+            self.view.layoutIfNeeded()
+        }, completion: { (result) in
+            effectImageView.removeFromSuperview()
+            self.hpBar.trailingAnchor.constraint(equalTo: self.monsterImageView.trailingAnchor, constant: -16)
+            self.view.layoutIfNeeded()
+        })
+    }
 }
 
 extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -283,7 +317,6 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let missions = self.missions else { return UICollectionViewCell() }
-        guard let validator = self.missionQuries else { return UICollectionViewCell() }
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MissionCollectionViewCell
         cell.mission = missions[indexPath.row]
@@ -296,7 +329,7 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
 
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         let attackAction = UIAlertAction(title: "Attack", style: UIAlertAction.Style.default, handler: { (action) in
-
+            self.handleAttack(missionIndex: indexPath.row, cell: collectionView.cellForItem(at: indexPath) as! MissionCollectionViewCell)
         })
         attackAction.isEnabled = false
         missionQuries.queryData(mission: missions[indexPath.row]) { (data) in
