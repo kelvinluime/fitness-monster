@@ -21,6 +21,9 @@ class GameSceneViewController: UIViewController {
     var missions: [Mission]? = []
     var validator: HKValidator?
 
+    var isMonsterUp: Bool?
+    var monsterCenterYAnchor: NSLayoutConstraint?
+
     let profileButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(handleProfile), for: UIControl.Event.touchUpInside)
@@ -91,11 +94,12 @@ class GameSceneViewController: UIViewController {
         self.missions = getHardcodedMissions()
         requestHKPermissons()
         setupLayout()
+        animateMonster()
     }
 
     func getHardcodedMissions() -> [Mission] {
-        let quickAttackMission = Mission(title: "quick attack", description: "In order to damage the monster, you need to travel 0.2 miles by foot. Walking can help by improving overall physical health and aid weight loss. Don't cheat!", damage: 2, image: UIImage(imageLiteralResourceName: "quick-attack"))
-        let megaPunchMission = Mission(title: "mega punch", description: "In order to damage the monster, you have to consume around 2000 calories for 1 day(s). Balance diet is essential!", damage: 2, image: UIImage(imageLiteralResourceName: "mega-punch"))
+        let quickAttackMission = Mission(title: "quick attack", description: "In order to damage the monster, you need to travel 800 meters by foot. Walking can help by improving overall physical health and aid weight loss. Don't cheat!", damage: 2, image: UIImage(imageLiteralResourceName: "quick-attack"))
+        let megaPunchMission = Mission(title: "mega punch", description: "In order to damage the monster, you have to consume around 100 active calories for 1 day(s). Balance diet is essential!", damage: 2, image: UIImage(imageLiteralResourceName: "mega-punch"))
         let fiberTornadoMission = Mission(title: "fiber tornado", description: "In order to damage the monster, you have to consume 30 grams of fiber for 1 day(s). Fiber can help by relieving constipation!", damage: 2, image: UIImage(imageLiteralResourceName: "fiber-tornado"))
         let proteinKickMission = Mission(title: "protein kick", description: "In order to damage the monster, you have to consume 40 grams of protein for 1 day(s). Protein is an importing building block of bones, muscles, skin and blood!", damage: 2, image: UIImage(imageLiteralResourceName: "protein-kick"))
         let nightmareAttackMission = Mission(title: "nightmare attack", description: "In order to damage the monster, you need to have 8 hours of sleep for 1 day(s). Not having enough hours sleep can need to diabetes, heart attack, heart failure and stroke!", damage: 2, image: UIImage(imageLiteralResourceName: "nightmare-attack"))
@@ -144,6 +148,7 @@ class GameSceneViewController: UIViewController {
         let flightsClimbed = HKObjectType.quantityType(forIdentifier: .flightsClimbed)
         let fat = HKObjectType.quantityType(forIdentifier: .dietaryFatSaturated)
         let fiber = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFiber)
+        let activeEnergyBurned = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)
 
         return Set<AnyHashable>([
             weightType,
@@ -154,8 +159,17 @@ class GameSceneViewController: UIViewController {
             dietaryProtein,
             flightsClimbed,
             fat,
-            fiber
+            fiber,
+            activeEnergyBurned
             ])
+    }
+
+    func animateMonster() {
+        self.monsterCenterYAnchor?.constant = (self.isMonsterUp! ? 0.25 : 0.2)*self.view.frame.height
+        self.isMonsterUp = !isMonsterUp!
+        UIView.animate(withDuration: 5, delay: 0.5, options: [.curveEaseInOut, .autoreverse, .repeat], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 
     func setupLayout() {
@@ -179,9 +193,11 @@ class GameSceneViewController: UIViewController {
 
         view.addSubview(monsterImageView)
         monsterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        monsterImageView.centerYAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.25).isActive = true
+        monsterCenterYAnchor = monsterImageView.centerYAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.25)
+        monsterCenterYAnchor?.isActive = true
         monsterImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         monsterImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        isMonsterUp = false
 
         view.addSubview(hpBar)
         hpBar.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -224,6 +240,43 @@ class GameSceneViewController: UIViewController {
         missionsCollectionView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         missionsCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
     }
+
+    func handleViewDetails(missionIndex: Int) {
+        guard let validator = self.validator else { fatalError() }
+
+        let vc = MissionDetailViewController()
+        vc.mission = self.missions?[missionIndex]
+
+        validator.validate(mission: vc.mission!, completion: { (data) in
+            var targetString: String?
+            switch vc.mission!.title! {
+            case "protein kick":
+                targetString = "\(data.quantity.description ?? "0 g") / 40 g"
+            case "quick attack":
+                targetString = "\(data.quantity.description ?? "0 m") / 800 m"
+            case "mega punch":
+                targetString = "\(data.quantity.description ?? "0 calories") / 2000 calories"
+            case "fiber tornado":
+                targetString = "\(data.quantity.description ?? "0 grams") / 30 grams"
+            case "nightmare attack":
+                targetString = "\(data.quantity.description ?? "0 hour") / 8 hours"
+            case "mach booster":
+                targetString = "\(data.quantity.description ?? "0 floor") / 4 floors"
+            case "psybeam":
+                targetString = "\(data.quantity.description ?? "0 minute") / 30 minutes"
+            case "flameburst":
+                targetString = "\(data.quantity.description ?? "0 gram") / 22 grams"
+            case "water cannon":
+                targetString = "\(data.quantity.description ?? "0 mL") / 2000 mL"
+            case "steel strike":
+                targetString = "\(data.quantity.description ?? "0 mission") / 9 missions"
+            default:
+                break
+            }
+            vc.targetString = targetString
+        })
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -237,25 +290,26 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MissionCollectionViewCell
         cell.mission = missions[indexPath.row]
-        validator.validate(mission: cell.mission!)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Use", style: UIAlertAction.Style.default, handler: nil))
-        actionSheet.addAction(UIAlertAction(title: "View Details", style: UIAlertAction.Style.default, handler: { (action) in
-            let vc = MissionDetailViewController()
-            vc.mission = self.missions?[indexPath.row]
-            self.present(vc, animated: true, completion: nil)
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        present(actionSheet, animated: true, completion: nil)
-    }
-}
+        guard let validator = self.validator else { return }
 
-extension GameSceneViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 90, height: 110)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        let attackAction = UIAlertAction(title: "Attack", style: UIAlertAction.Style.default, handler: nil)
+        attackAction.isEnabled = false
+        actionSheet.addAction(attackAction)
+        actionSheet.addAction(UIAlertAction(title: "View Details", style: UIAlertAction.Style.default, handler: { (action) in
+            self.handleViewDetails(missionIndex: indexPath.row)
+        }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+            present(actionSheet, animated: true, completion: nil)
+        }
     }
+
+    extension GameSceneViewController: UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: 90, height: 110)
+        }
 }

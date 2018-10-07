@@ -7,8 +7,21 @@
 //
 
 import UIKit
+import HealthKit
 
 class MissionDetailViewController: UIViewController {
+    var validator: HKValidator?
+    var targetString: String? {
+        didSet {
+            guard let targetString = self.targetString else { return }
+
+            self.targetLabel.attributedText = NSAttributedString(string: targetString, attributes: [
+                NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1),
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)
+                ])
+        }
+    }
+
     var mission: Mission? {
         didSet {
             guard let mission = mission else { return }
@@ -29,14 +42,9 @@ class MissionDetailViewController: UIViewController {
                 NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
                 ])
 
-            targetLabel.attributedText = NSAttributedString(string: "0/40", attributes: [
-                NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1),
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)
-                ])
-
             descriptionLabel.attributedText = NSAttributedString(string: mission.description, attributes: [
                 NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1),
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22)
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20)
                 ])
 
             missionImageView.image = mission.image

@@ -35,6 +35,12 @@ class MissionCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    let indicator: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
