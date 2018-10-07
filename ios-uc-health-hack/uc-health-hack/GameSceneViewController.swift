@@ -12,8 +12,14 @@ import HealthKitUI
 
 class GameSceneViewController: UIViewController {
     let cellId = "cellId"
-    var healthStore: HKHealthStore?
+    var healthStore: HKHealthStore? {
+        didSet {
+            guard let healthStore = self.healthStore else { return }
+            validator = HKValidator(healthStore: healthStore)
+        }
+    }
     var missions: [Mission]? = []
+    var validator: HKValidator?
 
     let profileButton: UIButton = {
         let button = UIButton()
@@ -134,8 +140,22 @@ class GameSceneViewController: UIViewController {
         let step = HKObjectType.quantityType(forIdentifier: .stepCount)
         let walking = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)
         let water = HKObjectType.quantityType(forIdentifier: .dietaryWater)
+        let dietaryProtein = HKObjectType.quantityType(forIdentifier: .dietaryProtein)
+        let flightsClimbed = HKObjectType.quantityType(forIdentifier: .flightsClimbed)
+        let fat = HKObjectType.quantityType(forIdentifier: .dietaryFatSaturated)
+        let fiber = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFiber)
 
-        return Set<AnyHashable>([weightType, step, walking, sleepAnalysis, water])
+        return Set<AnyHashable>([
+            weightType,
+            step,
+            walking,
+            sleepAnalysis,
+            water,
+            dietaryProtein,
+            flightsClimbed,
+            fat,
+            fiber
+            ])
     }
 
     func setupLayout() {
@@ -213,9 +233,11 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let missions = self.missions else { return UICollectionViewCell() }
+        guard let validator = self.validator else { return UICollectionViewCell() }
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MissionCollectionViewCell
         cell.mission = missions[indexPath.row]
+        validator.validate(mission: cell.mission!)
         return cell
     }
 

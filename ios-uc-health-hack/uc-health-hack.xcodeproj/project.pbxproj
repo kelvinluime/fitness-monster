@@ -22,8 +22,8 @@
 		BF8E017E216983F600BA01D6 /* HKValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E017D216983F600BA01D6 /* HKValidator.swift */; };
 		BF8E018221698E0000BA01D6 /* Missions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E018121698E0000BA01D6 /* Missions.swift */; };
 		BF8E018421698E5F00BA01D6 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E018321698E5F00BA01D6 /* Mission.swift */; };
-		BF8E01862169909C00BA01D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8E01852169909C00BA01D6 /* Assets.xcassets */; };
 		BF8E01882169A39F00BA01D6 /* MissionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */; };
+		BF8E018C2169E72100BA01D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8E018B2169E72100BA01D6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +72,8 @@
 		BF8E017D216983F600BA01D6 /* HKValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKValidator.swift; sourceTree = "<group>"; };
 		BF8E018121698E0000BA01D6 /* Missions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Missions.swift; sourceTree = "<group>"; };
 		BF8E018321698E5F00BA01D6 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
-		BF8E01852169909C00BA01D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewController.swift; sourceTree = "<group>"; };
+		BF8E018B2169E72100BA01D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 		BF8E014021692C6400BA01D6 /* uc-health-hack */ = {
 			isa = PBXGroup;
 			children = (
-				BF8E01852169909C00BA01D6 /* Assets.xcassets */,
+				BF8E018B2169E72100BA01D6 /* Assets.xcassets */,
 				BF8E0179216964D300BA01D6 /* uc-health-hack.entitlements */,
 				BF8E014121692C6400BA01D6 /* AppDelegate.swift */,
 				BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */,
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8E014C21692C7100BA01D6 /* LaunchScreen.storyboard in Resources */,
-				BF8E01862169909C00BA01D6 /* Assets.xcassets in Resources */,
+				BF8E018C2169E72100BA01D6 /* Assets.xcassets in Resources */,
 				4C3D941D2169437800BD1B0A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
