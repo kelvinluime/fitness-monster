@@ -76,7 +76,8 @@ class GameSceneViewController: UIViewController {
     }()
 
     @objc func handleProfile() {
-
+        let profileView = ProfileSceneViewController()
+        self.present(profileView, animated: true, completion: nil)
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {

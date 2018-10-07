@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C3D941D2169437800BD1B0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C3D941C2169437800BD1B0A /* GoogleService-Info.plist */; };
 		4C3D941F2169483600BD1B0A /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D941E2169483600BD1B0A /* LoginSceneViewController.swift */; };
+		4C8E9D512169FF010030F921 /* ProfileSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E9D502169FF010030F921 /* ProfileSceneViewController.swift */; };
 		4F44A6E902C3822A2BED0F2D /* Pods_uc_health_hackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7278D4F559B3283F9C267CE9 /* Pods_uc_health_hackUITests.framework */; };
 		5C3F3F698E8E74068C6FF60D /* Pods_uc_health_hackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3922801EC631E2EBBD8BBABC /* Pods_uc_health_hackTests.framework */; };
 		6469B931909AAA1B3FCFCCBE /* Pods_uc_health_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3CA0C168BCC8BE6A94E4B /* Pods_uc_health_hack.framework */; };
@@ -52,6 +53,7 @@
 		3E1C676031AFA8C3B4CBDC41 /* Pods-uc-health-hackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackTests.release.xcconfig"; path = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C3D941C2169437800BD1B0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C3D941E2169483600BD1B0A /* LoginSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
+		4C8E9D502169FF010030F921 /* ProfileSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSceneViewController.swift; sourceTree = "<group>"; };
 		57081B2AD872E0C6ED55CBF2 /* Pods-uc-health-hackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackTests.debug.xcconfig"; path = "Target Support Files/Pods-uc-health-hackTests/Pods-uc-health-hackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7278D4F559B3283F9C267CE9 /* Pods_uc_health_hackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uc_health_hackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7E78E3C6BA88F18B7FD662 /* Pods-uc-health-hackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackUITests.debug.xcconfig"; path = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				BF8E018121698E0000BA01D6 /* Missions.swift */,
 				BF8E018321698E5F00BA01D6 /* Mission.swift */,
 				BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */,
+				4C8E9D502169FF010030F921 /* ProfileSceneViewController.swift */,
 			);
 			path = "uc-health-hack";
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				4C3D941F2169483600BD1B0A /* LoginSceneViewController.swift in Sources */,
 				BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */,
 				BF8E014221692C6400BA01D6 /* AppDelegate.swift in Sources */,
+				4C8E9D512169FF010030F921 /* ProfileSceneViewController.swift in Sources */,
 				BF8E018421698E5F00BA01D6 /* Mission.swift in Sources */,
 				BF8E017E216983F600BA01D6 /* HKValidator.swift in Sources */,
 			);
