@@ -12,7 +12,7 @@ class ProfileSceneViewController: UIViewController {
 
     let backgroundView: UIImageView = {
         let imView = UIImageView()
-        imView.image = UIImage(imageLiteralResourceName: "profile-wood")
+        imView.image = UIImage(imageLiteralResourceName: "profile-wood2")
         imView.translatesAutoresizingMaskIntoConstraints = false
         return imView
     }()
