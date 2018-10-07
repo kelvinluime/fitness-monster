@@ -10,7 +10,7 @@ import UIKit
 import HealthKit
 
 class MissionDetailViewController: UIViewController {
-    var validator: HKValidator?
+    var validator: MissionQuries?
     var targetString: String? {
         didSet {
             guard let targetString = self.targetString else { return }

@@ -20,7 +20,7 @@
 		BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */; };
 		BF8E017421694E6D00BA01D6 /* MissionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */; };
 		BF8E017B216964D300BA01D6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8E017A216964D300BA01D6 /* HealthKit.framework */; };
-		BF8E017E216983F600BA01D6 /* HKValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E017D216983F600BA01D6 /* HKValidator.swift */; };
+		BF8E017E216983F600BA01D6 /* MissionQuries.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E017D216983F600BA01D6 /* MissionQuries.swift */; };
 		BF8E018221698E0000BA01D6 /* Missions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E018121698E0000BA01D6 /* Missions.swift */; };
 		BF8E018421698E5F00BA01D6 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E018321698E5F00BA01D6 /* Mission.swift */; };
 		BF8E01882169A39F00BA01D6 /* MissionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */; };
@@ -71,7 +71,7 @@
 		BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF8E0179216964D300BA01D6 /* uc-health-hack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "uc-health-hack.entitlements"; sourceTree = "<group>"; };
 		BF8E017A216964D300BA01D6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		BF8E017D216983F600BA01D6 /* HKValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKValidator.swift; sourceTree = "<group>"; };
+		BF8E017D216983F600BA01D6 /* MissionQuries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionQuries.swift; sourceTree = "<group>"; };
 		BF8E018121698E0000BA01D6 /* Missions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Missions.swift; sourceTree = "<group>"; };
 		BF8E018321698E5F00BA01D6 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */,
 				BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */,
 				4C3D941E2169483600BD1B0A /* LoginSceneViewController.swift */,
-				BF8E017D216983F600BA01D6 /* HKValidator.swift */,
+				BF8E017D216983F600BA01D6 /* MissionQuries.swift */,
 				BF8E018121698E0000BA01D6 /* Missions.swift */,
 				BF8E018321698E5F00BA01D6 /* Mission.swift */,
 				BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */,
@@ -480,7 +480,7 @@
 				BF8E014221692C6400BA01D6 /* AppDelegate.swift in Sources */,
 				4C8E9D512169FF010030F921 /* ProfileSceneViewController.swift in Sources */,
 				BF8E018421698E5F00BA01D6 /* Mission.swift in Sources */,
-				BF8E017E216983F600BA01D6 /* HKValidator.swift in Sources */,
+				BF8E017E216983F600BA01D6 /* MissionQuries.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

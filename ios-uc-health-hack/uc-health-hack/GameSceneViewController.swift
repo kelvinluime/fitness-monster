@@ -15,11 +15,11 @@ class GameSceneViewController: UIViewController {
     var healthStore: HKHealthStore? {
         didSet {
             guard let healthStore = self.healthStore else { return }
-            validator = HKValidator(healthStore: healthStore)
+            missionQuries = MissionQuries(healthStore: healthStore)
         }
     }
     var missions: [Mission]? = []
-    var validator: HKValidator?
+    var missionQuries: MissionQuries?
 
     var isMonsterUp: Bool?
     var monsterCenterYAnchor: NSLayoutConstraint?
@@ -243,39 +243,35 @@ class GameSceneViewController: UIViewController {
     }
 
     func handleViewDetails(missionIndex: Int) {
-        guard let validator = self.validator else { fatalError() }
+        guard let missionQuries = self.missionQuries else { fatalError() }
 
         let vc = MissionDetailViewController()
         vc.mission = self.missions?[missionIndex]
 
-        validator.validate(mission: vc.mission!, completion: { (data) in
-            var targetString: String?
-            switch vc.mission!.title! {
-            case "protein kick":
-                targetString = "\(data.quantity.description ?? "0 g") / 40 g"
-            case "quick attack":
-                targetString = "\(data.quantity.description ?? "0 m") / 800 m"
-            case "mega punch":
-                targetString = "\(data.quantity.description ?? "0 calories") / 2000 calories"
-            case "fiber tornado":
-                targetString = "\(data.quantity.description ?? "0 grams") / 30 grams"
-            case "nightmare attack":
-                targetString = "\(data.quantity.description ?? "0 hour") / 8 hours"
-            case "mach booster":
-                targetString = "\(data.quantity.description ?? "0 floor") / 4 floors"
-            case "psybeam":
-                targetString = "\(data.quantity.description ?? "0 minute") / 30 minutes"
-            case "flameburst":
-                targetString = "\(data.quantity.description ?? "0 gram") / 22 grams"
-            case "water cannon":
-                targetString = "\(data.quantity.description ?? "0 mL") / 2000 mL"
-            case "steel strike":
-                targetString = "\(data.quantity.description ?? "0 mission") / 9 missions"
-            default:
-                break
+        switch vc.mission!.title {
+        case "protein kick":
+            missionQuries.queryData(mission: vc.mission!, completion: { (data) in
+                vc.targetString = "\(Int(data)) / 40 grams"
+            })
+        case "quick attack":
+            missionQuries.queryData(mission: vc.mission!, completion: { (data) in
+                vc.targetString = "\(Int(data)) / 800 miles"
+            })
+        case "fiber tornado":
+            missionQuries.queryData(mission: vc.mission!) { (data) in
+                vc.targetString = "\(Int(data)) / 30 grams"
             }
-            vc.targetString = targetString
-        })
+        case "mach booster":
+            missionQuries.queryData(mission: vc.mission!) { (data) in
+                vc.targetString = "\(Int(data)) / 4 floors"
+            }
+        case "water cannon":
+            missionQuries.queryData(mission: vc.mission!) { (data) in
+                vc.targetString = "\(Int(data)) / 2000 mL"
+            }
+        default:
+            vc.targetString = "NA"
+        }
         self.present(vc, animated: true, completion: nil)
     }
 }
@@ -287,7 +283,7 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let missions = self.missions else { return UICollectionViewCell() }
-        guard let validator = self.validator else { return UICollectionViewCell() }
+        guard let validator = self.missionQuries else { return UICollectionViewCell() }
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MissionCollectionViewCell
         cell.mission = missions[indexPath.row]
@@ -295,17 +291,37 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let validator = self.validator else { return }
+        guard let missionQuries = self.missionQuries else { return }
+        guard let missions = self.missions else { return }
 
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        let attackAction = UIAlertAction(title: "Attack", style: UIAlertAction.Style.default, handler: nil)
+        let attackAction = UIAlertAction(title: "Attack", style: UIAlertAction.Style.default, handler: { (action) in
+
+        })
         attackAction.isEnabled = false
-        actionSheet.addAction(attackAction)
-        actionSheet.addAction(UIAlertAction(title: "View Details", style: UIAlertAction.Style.default, handler: { (action) in
-            self.handleViewDetails(missionIndex: indexPath.row)
-        }))
+        missionQuries.queryData(mission: missions[indexPath.row]) { (data) in
+            switch missions[ indexPath.row].title {
+            case "protein kick":
+                if data >= 40 { attackAction.isEnabled = true }
+            case "quick attack":
+                if data >= 800 { attackAction.isEnabled = true }
+            case "fiber tornado":
+                if data >= 30 { attackAction.isEnabled = true }
+            case "mach booster":
+                if data >= 4 { attackAction.isEnabled = true }
+            case "water cannon":
+                if data >= 2000 { attackAction.isEnabled = true }
+            default:
+                break
+            }
+
+            actionSheet.addAction(attackAction)
+            actionSheet.addAction(UIAlertAction(title: "View Details", style: UIAlertAction.Style.default, handler: { (action) in
+                self.handleViewDetails(missionIndex: indexPath.row)
+            }))
             actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-            present(actionSheet, animated: true, completion: nil)
+            self.present(actionSheet, animated: true, completion: nil)
+        }
         }
     }
 
