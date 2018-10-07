@@ -54,6 +54,13 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         return tf
     }()
 
+    let backgroundView: UIImageView = {
+        let imView = UIImageView()
+        imView.image = UIImage(imageLiteralResourceName: "login-forest")
+        imView.translatesAutoresizingMaskIntoConstraints = false
+        return imView
+    }()
+
     let logoView: UIImageView = {
         let imView = UIImageView()
         imView.image = UIImage(imageLiteralResourceName: "monster")
@@ -65,8 +72,8 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         let button = UIButton(type: .roundedRect)
         button.addTarget(self, action: #selector(handleLogin), for: UIControl.Event.touchUpInside)
         button.setTitle("Login", for: UIControl.State.normal)
-        button.backgroundColor = .clear
-        button.layer.cornerRadius = 12
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 6
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +129,12 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         viewContainer.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         viewContainer.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         viewContainer.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+
+        viewContainer.addSubview(backgroundView)
+        backgroundView.centerXAnchor.constraint(equalTo: viewContainer.centerXAnchor).isActive = true
+        backgroundView.centerYAnchor.constraint(equalTo: viewContainer.centerYAnchor).isActive = true
+        backgroundView.heightAnchor.constraint(equalTo: viewContainer.heightAnchor).isActive = true
+        backgroundView.widthAnchor.constraint(equalTo: viewContainer.widthAnchor).isActive = true
 
 
         viewContainer.addSubview(logoView)
