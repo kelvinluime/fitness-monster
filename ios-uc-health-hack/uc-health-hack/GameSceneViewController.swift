@@ -13,6 +13,7 @@ import HealthKitUI
 class GameSceneViewController: UIViewController {
     let cellId = "cellId"
     var healthStore: HKHealthStore?
+    var missions: [Mission]? = []
 
     let profileButton: UIButton = {
         let button = UIButton()
@@ -71,10 +72,39 @@ class GameSceneViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         view.backgroundColor = .white
 
+        self.missions = getHardcodedMissions()
         requestHKPermissons()
         setupLayout()
+    }
+
+    func getHardcodedMissions() -> [Mission] {
+        let quickAttackMission = Mission(title: "quick attack", description: "In order to damage the monster, you need to travel 0.2 miles by foot. Walking can help by improving overall physical health and aid weight loss. Don't cheat!", damage: 2, image: UIImage(imageLiteralResourceName: "quick-attack"))
+        let megaPunchMission = Mission(title: "mega punch", description: "In order to damage the monster, you have to consume around 2000 calories for 1 day(s). Balance diet is essential!", damage: 2, image: UIImage(imageLiteralResourceName: "mega-punch"))
+        let fiberTornadoMission = Mission(title: "fiber tornado", description: "In order to damage the monster, you have to consume 30 grams of fiber for 1 day(s). Fiber can help by relieving constipation!", damage: 2, image: UIImage(imageLiteralResourceName: "fiber-tornado"))
+        let proteinKickMission = Mission(title: "protein kick", description: "In order to damage the monster, you have to consume 40 grams of protein for 1 day(s). Protein is an importing building block of bones, muscles, skin and blood!", damage: 2, image: UIImage(imageLiteralResourceName: "protein-kick"))
+        let nightmareAttackMission = Mission(title: "nightmare attack", description: "In order to damage the monster, you need to have 8 hours of sleep for 1 day(s). Not having enough hours sleep can need to diabetes, heart attack, heart failure and stroke!", damage: 2, image: UIImage(imageLiteralResourceName: "nightmare-attack"))
+        let machBoosterMission = Mission(title: "mach booster", description: "In order to damage the monster, you should travel up/down in a total of 4 floors by stairs. Climbing stairs are one of the easiest ways to obtain a huge amount of cardio benefits!", damage: 2, image: UIImage(imageLiteralResourceName: "mach-booster"))
+        let psybeamMission = Mission(title: "psybeam", description: "In order to damage the monster, you need to meditate for 30 minutes. Mediation benefits by reducing stress and controlling anxiety.", damage: 2, image: UIImage(imageLiteralResourceName: "psybeam"))
+        let flameBurstMission = Mission(title: "flameburst", description: "In order to damage the monster, you need to have less than 22 grams saturated fat for 1 day(s). Eating too much saturated fat will increase your risk for heart disease.", damage: 1, image: UIImage(imageLiteralResourceName: "flameburst"))
+        let waterCannonMission = Mission(title: "water cannon", description: "In order to damage the monster, you should drink 8 cups of water for 1 day(s). Your body is composed of about 60% water. Drinking 8 cups of Water Helps Maintain the Balance of Body Fluids.", damage: 2, image: UIImage(imageLiteralResourceName: "water-cannon"))
+        let steelStrikeMission = Mission(title: "steel strike", description: "Congruation! You have obtained the ultimate weapon: a healthy body. No monster can stop you now.", damage: 10, image: UIImage(imageLiteralResourceName: "steel-strike"))
+
+        return [
+            quickAttackMission,
+            megaPunchMission,
+            fiberTornadoMission,
+            proteinKickMission,
+            nightmareAttackMission,
+            machBoosterMission,
+            psybeamMission,
+            flameBurstMission,
+            waterCannonMission,
+            steelStrikeMission
+        ]
     }
 
     func requestHKPermissons() {
@@ -82,7 +112,7 @@ class GameSceneViewController: UIViewController {
 
         self.healthStore = HKHealthStore()
         let readDataTypes = self.dataTypesToRead()
-        self.healthStore?.requestAuthorization(toShare: nil, read: readDataTypes as! Set<HKObjectType>, completion: { (result, error) in
+        self.healthStore?.requestAuthorization(toShare: nil, read: readDataTypes as? Set<HKObjectType>, completion: { (result, error) in
             if let error =  error {
                 let alert = UIAlertController(title: "Error", message: "There is an error when trying to request authorization on health data: \(error.localizedDescription)", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
@@ -93,18 +123,13 @@ class GameSceneViewController: UIViewController {
     }
 
     func dataTypesToRead() -> Set<AnyHashable> {
-        let heightType = HKObjectType.quantityType(forIdentifier: .height)
         let weightType = HKObjectType.quantityType(forIdentifier: .bodyMass)
-        let systolic = HKObjectType.quantityType(forIdentifier: .bloodPressureSystolic)
-        let dystolic = HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)
         let sleepAnalysis = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)
         let step = HKObjectType.quantityType(forIdentifier: .stepCount)
         let walking = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)
-        let cycling = HKObjectType.quantityType(forIdentifier: .distanceCycling)
-        let basalEnergyBurned = HKObjectType.quantityType(forIdentifier: .basalEnergyBurned)
         let water = HKObjectType.quantityType(forIdentifier: .dietaryWater)
 
-        return Set<AnyHashable>([weightType, step, walking, sleepAnalysis])
+        return Set<AnyHashable>([weightType, step, walking, sleepAnalysis, water])
     }
 
     func setupLayout() {
@@ -150,7 +175,7 @@ class GameSceneViewController: UIViewController {
 
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        let missionsCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80), collectionViewLayout: flowLayout)
+        let missionsCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 120), collectionViewLayout: flowLayout)
         missionsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         missionsCollectionView.backgroundColor = .clear
         missionsCollectionView.delegate = self
@@ -173,17 +198,32 @@ class GameSceneViewController: UIViewController {
 
 extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let missions = self.missions else { return UICollectionViewCell() }
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MissionCollectionViewCell
+        cell.mission = missions[indexPath.row]
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Use", style: UIAlertAction.Style.default, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "View Details", style: UIAlertAction.Style.default, handler: { (action) in
+            let vc = MissionDetailViewController()
+            vc.mission = self.missions?[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        present(actionSheet, animated: true, completion: nil)
     }
 }
 
 extension GameSceneViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 65, height: 80)
+        return CGSize(width: 90, height: 110)
     }
 }

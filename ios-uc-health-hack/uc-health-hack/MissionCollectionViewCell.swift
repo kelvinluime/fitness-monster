@@ -9,21 +9,29 @@
 import UIKit
 
 class MissionCollectionViewCell: UICollectionViewCell {
+    var mission: Mission? {
+        didSet {
+            guard let mission = mission else { return }
+
+            missionImageView.image = mission.image
+            titleLabel.attributedText = NSAttributedString(string: mission.title, attributes: [
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14),
+                NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
+                ])
+            titleLabel.textAlignment = .center
+        }
+    }
+
     let missionImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(imageLiteralResourceName: "fruits")
         return iv
     }()
 
-    let descriptionLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.attributedText = NSAttributedString(string: "fruits", attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14),
-            NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
-            ])
-        label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
 
@@ -45,11 +53,11 @@ class MissionCollectionViewCell: UICollectionViewCell {
         missionImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         missionImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
 
-        addSubview(descriptionLabel)
-        descriptionLabel.topAnchor.constraint(equalTo: missionImageView.bottomAnchor, constant: 8).isActive = true
-        descriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        descriptionLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        descriptionLabel.widthAnchor.constraint(equalToConstant: frame.width - 16).isActive = true
+        addSubview(titleLabel)
+        titleLabel.topAnchor.constraint(equalTo: missionImageView.bottomAnchor, constant: 8).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        titleLabel.widthAnchor.constraint(equalToConstant: frame.width - 16).isActive = true
     }
 
     required init?(coder aDecoder: NSCoder) {
