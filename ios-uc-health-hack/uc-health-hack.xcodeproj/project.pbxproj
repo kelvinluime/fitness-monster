@@ -13,13 +13,17 @@
 		5C3F3F698E8E74068C6FF60D /* Pods_uc_health_hackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3922801EC631E2EBBD8BBABC /* Pods_uc_health_hackTests.framework */; };
 		6469B931909AAA1B3FCFCCBE /* Pods_uc_health_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3CA0C168BCC8BE6A94E4B /* Pods_uc_health_hack.framework */; };
 		BF8E014221692C6400BA01D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E014121692C6400BA01D6 /* AppDelegate.swift */; };
-		BF8E014921692C7100BA01D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8E014821692C7100BA01D6 /* Assets.xcassets */; };
 		BF8E014C21692C7100BA01D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */; };
 		BF8E015721692C7100BA01D6 /* uc_health_hackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E015621692C7100BA01D6 /* uc_health_hackTests.swift */; };
 		BF8E016221692C7100BA01D6 /* uc_health_hackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E016121692C7100BA01D6 /* uc_health_hackUITests.swift */; };
 		BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */; };
 		BF8E017421694E6D00BA01D6 /* MissionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */; };
 		BF8E017B216964D300BA01D6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8E017A216964D300BA01D6 /* HealthKit.framework */; };
+		BF8E017E216983F600BA01D6 /* HKValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E017D216983F600BA01D6 /* HKValidator.swift */; };
+		BF8E018221698E0000BA01D6 /* Missions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E018121698E0000BA01D6 /* Missions.swift */; };
+		BF8E018421698E5F00BA01D6 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E018321698E5F00BA01D6 /* Mission.swift */; };
+		BF8E01862169909C00BA01D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8E01852169909C00BA01D6 /* Assets.xcassets */; };
+		BF8E01882169A39F00BA01D6 /* MissionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +57,6 @@
 		AB7E78E3C6BA88F18B7FD662 /* Pods-uc-health-hackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uc-health-hackUITests.debug.xcconfig"; path = "Target Support Files/Pods-uc-health-hackUITests/Pods-uc-health-hackUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF8E013E21692C6400BA01D6 /* uc-health-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uc-health-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8E014121692C6400BA01D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF8E014821692C7100BA01D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF8E014B21692C7100BA01D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF8E014D21692C7100BA01D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF8E015221692C7100BA01D6 /* uc-health-hackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uc-health-hackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +69,11 @@
 		BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF8E0179216964D300BA01D6 /* uc-health-hack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "uc-health-hack.entitlements"; sourceTree = "<group>"; };
 		BF8E017A216964D300BA01D6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		BF8E017D216983F600BA01D6 /* HKValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKValidator.swift; sourceTree = "<group>"; };
+		BF8E018121698E0000BA01D6 /* Missions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Missions.swift; sourceTree = "<group>"; };
+		BF8E018321698E5F00BA01D6 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		BF8E01852169909C00BA01D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,15 +154,19 @@
 		BF8E014021692C6400BA01D6 /* uc-health-hack */ = {
 			isa = PBXGroup;
 			children = (
+				BF8E01852169909C00BA01D6 /* Assets.xcassets */,
 				BF8E0179216964D300BA01D6 /* uc-health-hack.entitlements */,
 				BF8E014121692C6400BA01D6 /* AppDelegate.swift */,
-				BF8E014821692C7100BA01D6 /* Assets.xcassets */,
 				BF8E014A21692C7100BA01D6 /* LaunchScreen.storyboard */,
 				BF8E014D21692C7100BA01D6 /* Info.plist */,
 				4C3D941C2169437800BD1B0A /* GoogleService-Info.plist */,
 				BF8E016F21692F6300BA01D6 /* GameSceneViewController.swift */,
 				BF8E017321694E6D00BA01D6 /* MissionCollectionViewCell.swift */,
 				4C3D941E2169483600BD1B0A /* LoginSceneViewController.swift */,
+				BF8E017D216983F600BA01D6 /* HKValidator.swift */,
+				BF8E018121698E0000BA01D6 /* Missions.swift */,
+				BF8E018321698E5F00BA01D6 /* Mission.swift */,
+				BF8E01872169A39F00BA01D6 /* MissionDetailViewController.swift */,
 			);
 			path = "uc-health-hack";
 			sourceTree = "<group>";
@@ -292,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8E014C21692C7100BA01D6 /* LaunchScreen.storyboard in Resources */,
-				BF8E014921692C7100BA01D6 /* Assets.xcassets in Resources */,
+				BF8E01862169909C00BA01D6 /* Assets.xcassets in Resources */,
 				4C3D941D2169437800BD1B0A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,10 +469,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8E01882169A39F00BA01D6 /* MissionDetailViewController.swift in Sources */,
+				BF8E018221698E0000BA01D6 /* Missions.swift in Sources */,
 				BF8E017421694E6D00BA01D6 /* MissionCollectionViewCell.swift in Sources */,
 				4C3D941F2169483600BD1B0A /* LoginSceneViewController.swift in Sources */,
 				BF8E017021692F6300BA01D6 /* GameSceneViewController.swift in Sources */,
 				BF8E014221692C6400BA01D6 /* AppDelegate.swift in Sources */,
+				BF8E018421698E5F00BA01D6 /* Mission.swift in Sources */,
+				BF8E017E216983F600BA01D6 /* HKValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
