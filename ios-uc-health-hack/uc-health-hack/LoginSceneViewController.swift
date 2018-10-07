@@ -54,6 +54,13 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         return imView
     }()
 
+    let logoTextView: UIImageView = {
+        let imView = UIImageView()
+        imView.image = UIImage(imageLiteralResourceName: "logo-text")
+        imView.translatesAutoresizingMaskIntoConstraints = false
+        return imView
+    }()
+
     let loginButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(handleLogin), for: UIControl.Event.touchUpInside)
@@ -126,9 +133,15 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
 
         viewContainer.addSubview(logoView)
         logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.10 * -1).isActive = true
-        logoView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        logoView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.13 * -1).isActive = true
+        logoView.heightAnchor.constraint(equalToConstant: view.frame.width * 0.5).isActive = true
+        logoView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5).isActive = true
+
+        viewContainer.addSubview(logoTextView)
+        logoTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        logoTextView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.06).isActive = true
+        logoTextView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        logoTextView.widthAnchor.constraint(equalToConstant: view.frame.width * 1.3).isActive = true
 
         viewContainer.addSubview(loginButton)
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: view.frame.width*0.08 * -1).isActive = true
@@ -141,7 +154,7 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         logoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.30).isActive = true
         logoButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         logoButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
-
+        
         viewContainer.addSubview(loginBypass)
         loginBypass.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         loginBypass.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.40 * -1).isActive = true
