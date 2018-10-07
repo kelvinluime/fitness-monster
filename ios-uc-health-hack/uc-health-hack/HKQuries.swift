@@ -9,7 +9,7 @@
 import UIKit
 import HealthKit
 
-class HKQuries {
+class MissionQuries {
     var healthStore: HKHealthStore!
     
     init(healthStore: HKHealthStore) {
@@ -17,6 +17,24 @@ class HKQuries {
     }
 
     func queryProteinData(completion: @escaping (Double) -> ()) {
+        guard let healthStore = self.healthStore else { return }
+
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein)!
+        let query = HKSampleQuery(sampleType: sampleType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
+            guard let result = results?.first as? HKQuantitySample else {
+                completion(0)
+                return
+            }
+
+            DispatchQueue.main.async {
+                completion(result.quantity.doubleValue(for: HKUnit.gram()))
+            }
+        }
+
+        healthStore.execute(query)
+    }
+
+    func queryStepsData(completion: @escaping (Double) -> ()) {
         guard let healthStore = self.healthStore else { return }
 
         let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein)!
