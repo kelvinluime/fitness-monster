@@ -15,7 +15,7 @@ class MissionDetailViewController: UIViewController {
 
             titleLabel.attributedText = NSAttributedString(string: mission.title, attributes: [
                 NSAttributedString.Key.foregroundColor : UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1),
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 36)
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 32)
                 ])
             titleLabel.textAlignment = .center
 
@@ -29,9 +29,14 @@ class MissionDetailViewController: UIViewController {
                 NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
                 ])
 
+            targetLabel.attributedText = NSAttributedString(string: "0/40", attributes: [
+                NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1),
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)
+                ])
+
             descriptionLabel.attributedText = NSAttributedString(string: mission.description, attributes: [
                 NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1),
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 24)
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22)
                 ])
 
             missionImageView.image = mission.image
@@ -91,6 +96,19 @@ class MissionDetailViewController: UIViewController {
         return label
     }()
 
+    let targetImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(imageLiteralResourceName: "target")
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+
+    let targetLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     @objc func handleClose() {
         dismiss(animated: true, completion: nil)
     }
@@ -146,8 +164,20 @@ class MissionDetailViewController: UIViewController {
         timeLeftLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
         timeLeftLabel.widthAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
 
+        view.addSubview(targetImageView)
+        targetImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        targetImageView.topAnchor.constraint(equalTo: timeLeftLabel.bottomAnchor, constant: 16).isActive = true
+        targetImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        targetImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+
+        view.addSubview(targetLabel)
+        targetLabel.leadingAnchor.constraint(equalTo: targetImageView.trailingAnchor, constant: 8).isActive = true
+        targetLabel.centerYAnchor.constraint(equalTo: targetImageView.centerYAnchor).isActive = true
+        targetLabel.widthAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
+        targetLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+
         view.addSubview(descriptionLabel)
-        descriptionLabel.topAnchor.constraint(equalTo: timeLeftImageView.bottomAnchor).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: targetLabel.bottomAnchor).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
