@@ -44,6 +44,8 @@ class GameSceneViewController: UIViewController {
     let brickImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(imageLiteralResourceName: "brick")
+        iv.clipsToBounds = true
+        iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -59,9 +61,9 @@ class GameSceneViewController: UIViewController {
     let missionsTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.attributedText = NSAttributedString(string: "missions", attributes: [
+        label.attributedText = NSAttributedString(string: "skills", attributes: [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20),
-            NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
+            NSAttributedString.Key.foregroundColor : UIColor.white
             ])
         label.textAlignment = .center
         return label
@@ -69,6 +71,10 @@ class GameSceneViewController: UIViewController {
 
     @objc func handleProfile() {
 
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func viewDidLoad() {
@@ -135,37 +141,45 @@ class GameSceneViewController: UIViewController {
     func setupLayout() {
         let topViewContainer = UIImageView()
         topViewContainer.image = UIImage(imageLiteralResourceName: "forest")
+        topViewContainer.contentMode = .scaleAspectFill
+        topViewContainer.clipsToBounds = true
         topViewContainer.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(topViewContainer)
         topViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        topViewContainer.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        topViewContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: -32).isActive = true
         topViewContainer.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        topViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+        topViewContainer.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 32).isActive = true
 
-        topViewContainer.addSubview(profileButton)
+        view.addSubview(profileButton)
         profileButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         profileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         profileButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
         profileButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
 
-        topViewContainer.addSubview(monsterImageView)
+        view.addSubview(monsterImageView)
         monsterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         monsterImageView.centerYAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.25).isActive = true
         monsterImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         monsterImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
 
-        topViewContainer.addSubview(hpBar)
+        view.addSubview(hpBar)
         hpBar.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         hpBar.bottomAnchor.constraint(equalTo: monsterImageView.topAnchor, constant: -16).isActive = true
         hpBar.heightAnchor.constraint(equalToConstant: 8).isActive = true
         hpBar.widthAnchor.constraint(equalToConstant: 90).isActive = true
 
-        topViewContainer.addSubview(promptLabel)
+        view.addSubview(promptLabel)
         promptLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        promptLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor , constant: view.frame.height * 0.03 * -1).isActive = true
+        promptLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         promptLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         promptLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+
+        view.addSubview(brickImageView)
+        brickImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        brickImageView.topAnchor.constraint(equalTo: topViewContainer.bottomAnchor, constant: -80).isActive = true
+        brickImageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        brickImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 96).isActive = true
 
         view.addSubview(missionsTitleLabel)
         missionsTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -175,18 +189,14 @@ class GameSceneViewController: UIViewController {
 
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
         let missionsCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 120), collectionViewLayout: flowLayout)
         missionsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         missionsCollectionView.backgroundColor = .clear
         missionsCollectionView.delegate = self
         missionsCollectionView.dataSource = self
         missionsCollectionView.register(MissionCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-
-        view.addSubview(brickImageView)
-        brickImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        brickImageView.topAnchor.constraint(equalTo: topViewContainer.bottomAnchor).isActive = true
-        brickImageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        brickImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
 
         view.addSubview(missionsCollectionView)
         missionsCollectionView.centerYAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.75).isActive = true
