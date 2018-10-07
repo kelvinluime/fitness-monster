@@ -15,8 +15,8 @@ class MissionCollectionViewCell: UICollectionViewCell {
 
             missionImageView.image = mission.image
             titleLabel.attributedText = NSAttributedString(string: mission.title, attributes: [
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14),
-                NSAttributedString.Key.foregroundColor : UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
+                NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 14),
+                NSAttributedString.Key.foregroundColor : UIColor.white
                 ])
             titleLabel.textAlignment = .center
         }
@@ -38,7 +38,7 @@ class MissionCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = .white
+        backgroundColor = .clear
         layer.cornerRadius = 18
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1).cgColor
