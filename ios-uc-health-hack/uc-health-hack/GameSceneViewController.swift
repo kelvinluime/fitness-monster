@@ -26,7 +26,7 @@ class GameSceneViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.attributedText = NSAttributedString(string: "\"you can do it!\"", attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20),
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 25),
             NSAttributedString.Key.foregroundColor : UIColor.white
             ])
         label.textAlignment = .center
@@ -101,9 +101,9 @@ class GameSceneViewController: UIViewController {
     }
 
     func setupLayout() {
-        let topViewContainer = UIView()
+        let topViewContainer = UIImageView()
+        topViewContainer.image = UIImage(imageLiteralResourceName: "forest")
         topViewContainer.translatesAutoresizingMaskIntoConstraints = false
-        topViewContainer.backgroundColor = UIColor(red: 184/255, green: 217/255, blue: 113/255, alpha: 1)
 
         view.addSubview(topViewContainer)
         topViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -131,8 +131,8 @@ class GameSceneViewController: UIViewController {
 
         topViewContainer.addSubview(promptLabel)
         promptLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        promptLabel.topAnchor.constraint(equalTo: monsterImageView.bottomAnchor , constant: 16).isActive = true
-        promptLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        promptLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor , constant: view.frame.height * 0.03 * -1).isActive = true
+        promptLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         promptLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
 
         view.addSubview(missionsTitleLabel)
