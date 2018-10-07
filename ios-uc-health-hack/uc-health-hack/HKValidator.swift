@@ -16,39 +16,35 @@ class HKValidator {
         self.healthStore = healthStore
     }
 
-    func getQuickAttackData() {
+    func validate(mission: Mission, completion: @escaping (HKQuantitySample) -> ()) {
         guard let healthStore = self.healthStore else { return }
 
-        
-    }
-
-    func validate(mission: Mission) {
-        guard let healthStore = self.healthStore else { return }
-
+        var sampleType: HKSampleType?
         switch mission.title {
         case "protein kick":
-            let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein)!
-            let query = HKSampleQuery(sampleType: sampleType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
-                if let result = results?.first as? HKQuantitySample {
-                    print("protein: \(result)")
-                } else if let error = error {
-                    print("protein error: \(error.localizedDescription)")
-                }
-            }
-            healthStore.execute(query)
-            break
+            sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein)!
         case "quick attack":
-            let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
-            let query = HKSampleQuery(sampleType: sampleType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
-                if let result = results?.first as? HKQuantitySample {
-                    print("distance: \(result)")
-                } else if let error = error {
-                    print("protein error: \(error.localizedDescription)")
-                }
-            }
-            healthStore.execute(query)
+            sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
+        case "fiber tornado":
+            sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFiber)!
+        case "mach booster":
+            sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)!
+        case "flameburst":
+            sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatSaturated)!
+        case "water cannon":
+            sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)
         default:
             return
         }
+
+        let query = HKSampleQuery(sampleType: sampleType!, predicate: nil, limit: 1, sortDescriptors: nil) { (query, results, error) in
+            if let result = results?.first as? HKQuantitySample {
+                completion(result)
+            } else if let error = error {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+
+        healthStore.execute(query)
     }
 }
