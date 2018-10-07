@@ -65,6 +65,8 @@ class GameSceneViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         view.backgroundColor = .white
 
         self.missions = getHardcodedMissions()
@@ -197,7 +199,11 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Use", style: UIAlertAction.Style.default, handler: nil))
-        actionSheet.addAction(UIAlertAction(title: "See details", style: UIAlertAction.Style.default, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "View Details", style: UIAlertAction.Style.default, handler: { (action) in
+            let vc = MissionDetailViewController()
+            vc.mission = self.missions?[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         present(actionSheet, animated: true, completion: nil)
     }
