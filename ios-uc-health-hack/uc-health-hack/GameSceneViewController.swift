@@ -24,7 +24,7 @@ class GameSceneViewController: UIViewController {
     var isMonsterUp: Bool?
     var monsterCenterYAnchor: NSLayoutConstraint?
 
-    var hpBarTrailingAnchor: NSLayoutAnchor?
+    var hpBarTrailingAnchor: NSLayoutAnchor<AnyObject>?
 
     let profileButton: UIButton = {
         let button = UIButton()

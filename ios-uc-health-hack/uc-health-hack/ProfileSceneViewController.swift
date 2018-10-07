@@ -21,6 +21,7 @@ class ProfileSceneViewController: UIViewController {
         let button = UIButton()
         button.addTarget(self, action: #selector(handleClose), for: UIControl.Event.touchUpInside)
         button.setImage(UIImage(imageLiteralResourceName: "close"), for: UIControl.State.normal)
+        button.backgroundColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -28,6 +29,9 @@ class ProfileSceneViewController: UIViewController {
     let picView: UIImageView = {
         let imView = UIImageView()
         imView.image = UIImage(imageLiteralResourceName: "chara-protagonist")
+        imView.backgroundColor = .black
+        imView.layer.borderWidth = 2.0
+        imView.layer.borderColor = UIColor.white.cgColor
         imView.translatesAutoresizingMaskIntoConstraints = false
         return imView
     }()
@@ -38,6 +42,7 @@ class ProfileSceneViewController: UIViewController {
         tf.isUserInteractionEnabled = false
         tf.layer.cornerRadius = 12
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.text = "demo-user@gmail.com"
         return tf
     }()
 
@@ -47,13 +52,24 @@ class ProfileSceneViewController: UIViewController {
         tf.isUserInteractionEnabled = false
         tf.layer.cornerRadius = 12
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.text = "Fitness Rookie"
+        return tf
+    }()
+
+    let starField: UITextField = {
+        let tf = UITextField()
+        tf.borderStyle = .roundedRect
+        tf.isUserInteractionEnabled = false
+        tf.layer.cornerRadius = 12
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.text = "*"
         return tf
     }()
 
     let helpButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(handleHelp), for: UIControl.Event.touchUpInside)
-        button.setImage(UIImage(imageLiteralResourceName: "close"), for: UIControl.State.normal)
+        button.setImage(UIImage(imageLiteralResourceName: "bell"), for: UIControl.State.normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -64,7 +80,9 @@ class ProfileSceneViewController: UIViewController {
     }
 
     @objc func handleHelp() {
-        // TODO
+        let alert = UIAlertController(title: "Request for Help", message: "You request has been sent.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -92,13 +110,19 @@ class ProfileSceneViewController: UIViewController {
         emailField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         emailField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height * 0.0).isActive = true
         emailField.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        emailField.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        emailField.widthAnchor.constraint(equalToConstant: 200).isActive = true
 
         viewContainer.addSubview(titleField)
         titleField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
         titleField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 12).isActive = true
         titleField.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        titleField.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        titleField.widthAnchor.constraint(equalToConstant: 200).isActive = true
+
+        viewContainer.addSubview(starField)
+        starField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        starField.topAnchor.constraint(equalTo: titleField.bottomAnchor, constant: 12).isActive = true
+        starField.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        starField.widthAnchor.constraint(equalToConstant: 200).isActive = true
 
         viewContainer.addSubview(picView)
         picView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -5).isActive = true
