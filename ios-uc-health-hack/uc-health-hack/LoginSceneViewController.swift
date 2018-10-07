@@ -38,13 +38,20 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         // Perform any operations when the user disconnects from app here.
     }
 
+    let emailInput: UITextField = {
+        let tf = UITextField()
+        tf.borderStyle = .roundedRect
+        tf.layer.cornerRadius = 12
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
 
-    let loginBypass: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(switchView), for: UIControl.Event.touchUpInside)
-        button.setImage(UIImage(imageLiteralResourceName: "padlock"), for: UIControl.State.normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+    let passwordInput: UITextField = {
+        let tf = UITextField()
+        tf.borderStyle = .roundedRect
+        tf.layer.cornerRadius = 12
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
     }()
 
     let logoView: UIImageView = {
@@ -54,36 +61,21 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         return imView
     }()
 
-    let logoTextView: UIImageView = {
-        let imView = UIImageView()
-        imView.image = UIImage(imageLiteralResourceName: "logo-text")
-        imView.translatesAutoresizingMaskIntoConstraints = false
-        return imView
-    }()
-
     let loginButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .roundedRect)
         button.addTarget(self, action: #selector(handleLogin), for: UIControl.Event.touchUpInside)
-        button.setImage(UIImage(imageLiteralResourceName: "padlock"), for: UIControl.State.normal)
+        button.setTitle("Login", for: UIControl.State.normal)
+        button.backgroundColor = .clear
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.lightGray.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
-    }()
-
-    let logoButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(handleLogin), for: UIControl.Event.touchUpInside)
-        button.setImage(UIImage(imageLiteralResourceName: "google-logo"), for: UIControl.State.normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
-    let textField: UITextView = {
-        let tf = UITextView()
-        return tf
     }()
 
     @objc func handleLogin() {
-        GIDSignIn.sharedInstance().signIn()
+        switchView()
+        // GIDSignIn.sharedInstance().signIn()
     }
 
     @objc func switchView() {
@@ -131,34 +123,29 @@ class LoginSceneViewController: UIViewController, GIDSignInUIDelegate, GIDSignIn
         viewContainer.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         viewContainer.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
 
-        viewContainer.addSubview(logoView)
-        logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.13 * -1).isActive = true
-        logoView.heightAnchor.constraint(equalToConstant: view.frame.width * 0.5).isActive = true
-        logoView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5).isActive = true
 
-        viewContainer.addSubview(logoTextView)
-        logoTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        logoTextView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.06).isActive = true
-        logoTextView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        logoTextView.widthAnchor.constraint(equalToConstant: view.frame.width * 1.3).isActive = true
+        viewContainer.addSubview(logoView)
+        logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -5).isActive = true
+        logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height * 0.2 * -1).isActive = true
+        logoView.heightAnchor.constraint(equalToConstant: view.frame.width * 0.4).isActive = true
+        logoView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.4).isActive = true
+
+        viewContainer.addSubview(emailInput)
+        emailInput.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        emailInput.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height * 0.0).isActive = true
+        emailInput.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        emailInput.widthAnchor.constraint(equalToConstant: 150).isActive = true
+
+        viewContainer.addSubview(passwordInput)
+        passwordInput.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        passwordInput.topAnchor.constraint(equalTo: emailInput.bottomAnchor, constant: 12).isActive = true
+        passwordInput.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        passwordInput.widthAnchor.constraint(equalToConstant: 150).isActive = true
 
         viewContainer.addSubview(loginButton)
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: view.frame.width*0.08 * -1).isActive = true
-        loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.30).isActive = true
-        loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        loginButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
-
-        viewContainer.addSubview(logoButton)
-        logoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: view.frame.width*0.08).isActive = true
-        logoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.30).isActive = true
-        logoButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        logoButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        
-        viewContainer.addSubview(loginBypass)
-        loginBypass.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-        loginBypass.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height*0.40 * -1).isActive = true
-        loginBypass.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        loginBypass.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        loginButton.topAnchor.constraint(equalTo: passwordInput.bottomAnchor, constant: 24).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        loginButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
     }
 }
