@@ -30,6 +30,7 @@ class MissionCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        backgroundColor = .white
         layer.cornerRadius = 18
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1).cgColor

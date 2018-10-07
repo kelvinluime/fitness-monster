@@ -40,6 +40,13 @@ class GameSceneViewController: UIViewController {
         return iv
     }()
 
+    let brickImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(imageLiteralResourceName: "brick")
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }()
+
     let hpBar: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -145,10 +152,16 @@ class GameSceneViewController: UIViewController {
         flowLayout.scrollDirection = .horizontal
         let missionsCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80), collectionViewLayout: flowLayout)
         missionsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        missionsCollectionView.backgroundColor = .white
+        missionsCollectionView.backgroundColor = .clear
         missionsCollectionView.delegate = self
         missionsCollectionView.dataSource = self
         missionsCollectionView.register(MissionCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+
+        view.addSubview(brickImageView)
+        brickImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        brickImageView.topAnchor.constraint(equalTo: topViewContainer.bottomAnchor).isActive = true
+        brickImageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        brickImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
 
         view.addSubview(missionsCollectionView)
         missionsCollectionView.centerYAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.75).isActive = true
